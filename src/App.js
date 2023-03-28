@@ -35,6 +35,9 @@ function App() {
     ]
   );
 
+  //state para el carrito de compras, el segundo parámetro es una función que interactuará con el carrito.
+  const [ carrito, agregarProducto] = useState([]);
+
   //get fecha.
   const fecha = new Date().getFullYear();
 
@@ -52,6 +55,10 @@ function App() {
         <Producto 
           key = {producto.id}
           producto = {producto}
+          carrito = {carrito}
+          //se incluye el state.
+          productos = {productos}
+          agregarProducto = {agregarProducto}
         />
       ))}
       <Footer
